@@ -1,0 +1,124 @@
+h1 {
+  color: #d0504e;
+}
+
+img {
+  height: 6rem;
+}
+
+ul {
+  list-style-type: none;
+
+}
+.categories-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.btn-category {
+  color: white;
+  height: 5rem;
+  width: 12rem;
+  padding-top: 1.2rem;
+  border-radius: 0.25rem;
+  input {
+
+    border: hidden;
+  }
+  p,
+  i,
+  input::placeholder{
+    color: white;
+  }
+  i {
+    cursor: pointer;
+  }
+}
+
+.dropdown-menu {
+ul {
+  color: white;
+  li {
+    width: 5rem;
+  }
+}
+input {
+  border: hidden;
+  outline: none;
+}
+}
+
+.dropdown-menu--ingredients {
+  transform: translate3d(11.5%, 359px, 30px) !important;
+}
+
+.dropdown-menu--appareils {
+  transform: translate3d(255px, 359px, 30px) !important;
+}
+
+.dropdown-menu--ustensiles {
+  transform: translate3d(463px, 359px, 30px) !important;
+}
+
+.dropdown-menu--ingredients,
+.btn-category--ingredients,
+.btn-category--ingredients input {
+  background-color: #3282f7;
+}
+
+.dropdown-menu--appareils,
+.btn-category--appareils,
+.btn-category--appareils input {
+  background-color: #68d9a4;
+}
+
+.dropdown-menu--ustensiles,
+.btn-category--ustensiles,
+.btn-category--ustensiles input {
+  background-color: #ed6454;
+}
+
+.btn-search--icone {
+  position: relative;
+  right: 3rem;
+}
+
+.input-search,
+.categories-container {
+  margin-left: 3.8rem !important;
+}
+
+
+.ingredients-list {
+  max-height: 15rem;
+  width: 25rem !important;
+}
+
+.recipe-card {
+  margin: 2rem;
+  height: 30rem;
+  width: 32rem;
+  //margin: 2rem 0;
+}
+
+.recipe-image {
+  height: 15rem;
+  background-color: #c7bebe ;
+}
+
+.recipe-info {
+  height: 15rem;
+  background-color: #EFEFEF;
+
+  text-overflow: ellipsis;
+  /* Required for text-overflow to do anything */
+  //white-space: wrap;
+  overflow: hidden;
+  //li {
+  //  white-space: wrap;
+  //}
+}
+
+.card-description {
+ width: 50%;
+}
