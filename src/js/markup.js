@@ -6,9 +6,7 @@ export class Markup {
         return `
                 <article class="recipe-card mt-3" data-filter-appliances="${this.recipe.appliance}" 
                                                   data-filter-ingredients="${this.recipe.ingredients.map(elt => `${elt.ingredient}`)}"
-                                                  data-filter-ustensils="${this.recipe.ustensils}">
-                                   
-                                
+                                                  data-filter-ustensils="${this.recipe.ustensils}">          
                     <div class="recipe-image"></div>
                         <div class="recipe-info ">
                             <div class="card-headings d-flex justify-content-between fs-6 m-1">
@@ -32,30 +30,14 @@ export class Markup {
                             </div>
                         </div>
                     </div>
-                </article>`
-    }
-    getIngredientsList () {
-        return `
-                ${this.recipe.ingredients.map(elt =>
-                    `<li>
-                         <strong>${elt.ingredient}</strong>
-                    </li>`).join('')}
+                </article>
         `
     }
-    getAppliancesList () {
+    getItemsList() {
         return `
-                ${this.recipe.appliance.map(elt =>
-                    `<li>
-                         <strong>${elt.appliance}</strong>
-                    </li>`).join('')}
-        `
-    }
-    getUstensilsList () {
-        return `
-                ${this.recipe.ustensils.map(elt =>
-                    `<li>
-                         <strong>${elt.ustensils}</strong>
-                    </li>`).join('')}
+                <li>
+                    <strong>${this.recipe}</strong>
+                </li>
         `
     }
 }

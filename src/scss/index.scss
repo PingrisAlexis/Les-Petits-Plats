@@ -8,7 +8,6 @@ img {
 
 ul {
   list-style-type: none;
-
 }
 .categories-container {
   display: flex;
@@ -21,8 +20,8 @@ ul {
   width: 12rem;
   padding-top: 1.2rem;
   border-radius: 0.25rem;
+  cursor: pointer;
   input {
-
     border: hidden;
   }
   p,
@@ -36,28 +35,47 @@ ul {
 }
 
 .dropdown-menu {
-ul {
+  width: 35rem;
+
+  ul {
   color: white;
   li {
-    width: 5rem;
+    margin: 0.5rem;
+    width: 9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
   }
 }
+
 input {
   border: hidden;
   outline: none;
-}
+  }
 }
 
 .dropdown-menu--ingredients {
-  transform: translate3d(11.5%, 359px, 30px) !important;
+  transform: translate3d(10.7%, 359px, 30px) !important;
+  li:hover {
+    color: #3282f7;
+    background-color: white;
+  }
 }
 
-.dropdown-menu--appareils {
-  transform: translate3d(255px, 359px, 30px) !important;
+.dropdown-menu--appliances {
+  transform: translate3d(47.9%, 359px, 30px) !important;
+  li:hover {
+    color: #68d9a4;
+    background-color: white;
+  }
 }
 
-.dropdown-menu--ustensiles {
-  transform: translate3d(463px, 359px, 30px) !important;
+.dropdown-menu--ustensils {
+  transform: translate3d(85%, 359px, 30px) !important;
+  li:hover {
+    color: #ed6454;
+    background-color: white;
+  }
 }
 
 .dropdown-menu--ingredients,
@@ -66,15 +84,15 @@ input {
   background-color: #3282f7;
 }
 
-.dropdown-menu--appareils,
-.btn-category--appareils,
-.btn-category--appareils input {
+.dropdown-menu--appliances,
+.btn-category--appliances,
+.btn-category--appliances input {
   background-color: #68d9a4;
 }
 
-.dropdown-menu--ustensiles,
-.btn-category--ustensiles,
-.btn-category--ustensiles input {
+.dropdown-menu--ustensils,
+.btn-category--ustensils,
+.btn-category--ustensils input {
   background-color: #ed6454;
 }
 
@@ -88,17 +106,10 @@ input {
   margin-left: 3.8rem !important;
 }
 
-
-.ingredients-list {
-  max-height: 15rem;
-  width: 25rem !important;
-}
-
 .recipe-card {
   margin: 2rem;
   height: 30rem;
   width: 32rem;
-  //margin: 2rem 0;
 }
 
 .recipe-image {
@@ -109,16 +120,14 @@ input {
 .recipe-info {
   height: 15rem;
   background-color: #EFEFEF;
-
   text-overflow: ellipsis;
-  /* Required for text-overflow to do anything */
-  //white-space: wrap;
   overflow: hidden;
-  //li {
-  //  white-space: wrap;
-  //}
 }
 
 .card-description {
- width: 50%;
+  width: 50%;
+}
+
+.hide {
+  display: none;
 }
