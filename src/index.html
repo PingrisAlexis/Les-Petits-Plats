@@ -34,7 +34,7 @@
     </div>
     <h1 class="text-center">Les petits plats</h1>
       <form class="d-flex w-100 search">
-        <input class="input-search form-control bg-light px-3" type="search" aria-label="Search" placeholder="Rechercher un ingrédient, appareil, ustensil ou une recette">
+        <input id="main-search-filter" class="input-search form-control bg-light px-3" type="search" aria-label="Search" placeholder="Rechercher un ingrédient, appareil, ustensil ou une recette">
         <button class="btn-search--icone btn fs-3 mr-8" type="button">
           <i class="fa fa-search"></i>
         </button>
@@ -68,10 +68,10 @@
           <input type="text"
                  placeholder="Rechercher un ingrédient"
                  name="ingredient"
-                 class="filter-input pe-5 filter-input--ingredients"/>
+                 class="pe-5 filter-input--ingredients"/>
           <i class="mt-2 fas fa-chevron-up"></i>
         </div>
-        <ul class="wrapper ingredients-list d-flex w-100 flex-wrap flex-column"
+        <ul class="d-flex w-100 flex-wrap justify-content-evenly fs-6"
             id="ingredients-list">
           <!-- GENERATE FILTER -->
         </ul>
@@ -79,47 +79,31 @@
     </div>
 
     <!--SELECT APPAREIL-->
-    <div class="btn-category btn-category--appareils me-3">
+    <div class="btn-category btn-category--appliances me-3">
       <div role="search"
            aria-expanded="false"
            data-bs-toggle="dropdown"
            class="btn w-100 fs-5 p-0 d-flex justify-content-around align-items-center">
-        <p>Appareils</p>
+        <p>Ingrédients</p>
         <i class="mb-2 fas fa-chevron-down"></i>
       </div>
 
-      <div class="dropdown-menu dropdown-menu--appareils">
+      <div class="dropdown-menu dropdown-menu--appliances">
         <div class="d-flex justify-content-between p-2 fs-5">
           <input type="text"
-                 placeholder="Rechercher un appareil"
-                 name="ingredient"
-                 class="filter-input pe-5 filter-input--appareil"/>
-          <i class="mt-2  fas fa-chevron-up"></i>
+                 placeholder="Rechercher un ingrédient"
+                 name="appliance"
+                 class="pe-5 filter-input--appliances"/>
+          <i class="mt-2 fas fa-chevron-up"></i>
         </div>
-
-
-        <ul class="wrapper ingredients-list d-flex w-100 flex-wrap flex-column"
-            id="appareil-list">
+        <ul class="d-flex w-100 flex-wrap justify-content-between fs-6"
+            id="appliances-list">
           <!-- GENERATE FILTER -->
-          <li>ae</li>
-          <li>aazeaze</li>
-          <li>aazeaze</li>
-          <li>aazeaze</li>
-          <li>aaze</li>
-          <li>aazeaze</li>
-          <li>aazeaze</li>
-          <li>aazeaze</li>
-          <li>aazeaze</li>
-          <li>aazeaze</li>
-          <li>aazeaze</li>
-          <li>aazeaze</li>
-          <li>aazeaze</li>
-          <li>aazeaze</li>
         </ul>
       </div>
     </div>
     <!--SELECT USTENSILES-->
-    <div class="btn-category btn-category--ustensiles me-3">
+    <div class="btn-category btn-category--ustensils me-3">
       <div role="search"
            aria-expanded="false"
            data-bs-toggle="dropdown"
@@ -128,22 +112,17 @@
         <i class="mb-2 fas fa-chevron-down"></i>
       </div>
 
-      <div class="dropdown-menu dropdown-menu--ustensiles">
+      <div class="dropdown-menu dropdown-menu--ustensils">
         <div class="d-flex justify-content-between p-2 fs-5">
-        <input type="text"
-               placeholder="Rechercher un ustensile"
-               name="ingredient"
-               class="filter-input w-100 pe-5 filter-input--ustensiles"/>
-        <i class="mt-2 fas fa-chevron-up"></i>
+          <input type="text"
+                 placeholder="Rechercher un ustensile"
+                 name="ingredient"
+                 class="filter-input pe-5 filter-input--ustensils"/>
+          <i class="mt-2 fas fa-chevron-up"></i>
         </div>
-        <ul class="wrapper ingredients-list d-flex w-100 flex-wrap flex-column"
-            id="ustensiles-list">
+        <ul class="d-flex w-100 flex-wrap justify-content- fs-6"
+            id="ustensils-list">
           <!-- GENERATE FILTER -->
-          <li>
-            <a>ahha</a>
-          </li>
-
-          <li>aazeaze</li>
         </ul>
       </div>
     </div>
