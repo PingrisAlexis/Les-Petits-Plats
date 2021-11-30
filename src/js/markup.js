@@ -9,25 +9,29 @@ export class Markup {
                                                   data-filter-ustensils="${this.recipe.ustensils}">          
                     <div class="recipe-image"></div>
                         <div class="recipe-info ">
-                            <div class="card-headings d-flex justify-content-between fs-6 m-1">
-                                <h3 class="card-title p-0 m-0 fw-light">${this.recipe.name}</h3>
-                                <div class="card-time d-flex align-items-center justify-content-center flex-nowrap fw-bold w-25">
-                                    <i class="far fa-clock pe-1"></i>
-                                    <p class="p-0 m-0">${this.recipe.time} min</p>
+                            <div class="card-headings container">
+                            <div class="row">
+                                <h3 class="card-title col-9">${this.recipe.name}</h3>
+                                <div class="card-time col-3 d-flex mt-1">
+                                    <i class="far fa-clock mt-1 pe-1"></i>
+                                    <span>${this.recipe.time} min</span>
                                 </div>
                             </div>
-                        <div class="d-flex m-1 gap-3  fs-8">
-                             <ul class="card-ingredients p-0 m-0">
+                            </div>
+                         <div class="container">
+                            <div class="row">
+                             <ul class="card-ingredients col-sm-5">
                              ${this.recipe.ingredients.map(elt =>
                                 `<li>
                                     <strong>${elt.ingredient}</strong>: ${elt.quantity ? elt.quantity : ''}${elt.unit ? elt.unit : ''} 
                                 </li>`).join('')}
                              </ul>
-                            <div class="card-description">
-                                <p class="p-0 m-0 flex-grow-1">
+                            <div class="card-description col-sm-5">
+                                <p>
                                     ${this.recipe.description}
                                 </p>
                             </div>
+                        </div>
                         </div>
                     </div>
                 </article>
@@ -35,9 +39,18 @@ export class Markup {
     }
     getItemsList() {
         return `
-                <li>
+                <li class="category-filter">
                     <strong>${this.recipe}</strong>
                 </li>
+        `
+    }
+    getNoResultMessage() {
+        return `
+                <div class=" mx-auto alert alert-danger w-75 align-self-center" role="alert">
+                     <span>Aucune recette ne correspond à votre critère… vous pouvez chercher « tarte aux pommes », « poisson », etc.</span>
+                </div>
+               
+               
         `
     }
 }
