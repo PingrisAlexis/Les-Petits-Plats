@@ -15,10 +15,8 @@ ul {
 }
 
 .btn-category {
-  color: white;
-  height: 5rem;
-  width: 12rem;
-  padding-top: 1.2rem;
+  color: white !important;
+  padding: 1rem;
   border-radius: 0.25rem;
   cursor: pointer;
   input {
@@ -32,10 +30,13 @@ ul {
   i {
     cursor: pointer;
   }
+  span {
+    color: white;
+  }
 }
 
 .dropdown-menu {
-  width: 35rem;
+  max-width: 35rem;
 
   ul {
   color: white;
@@ -47,7 +48,9 @@ ul {
     cursor: pointer;
   }
 }
-
+  ::placeholder {
+    color: grey !important;
+}
 input {
   border: hidden;
   outline: none;
@@ -55,7 +58,7 @@ input {
 }
 
 .dropdown-menu--ingredients {
-  transform: translate3d(10.7%, 359px, 30px) !important;
+  transform: translate3d(10.7%, 351px, 30px) !important;
   li:hover {
     color: #3282f7;
     background-color: white;
@@ -63,7 +66,7 @@ input {
 }
 
 .dropdown-menu--appliances {
-  transform: translate3d(47.9%, 359px, 30px) !important;
+  transform: translate3d(43.6%, 351px, 30px) !important;
   li:hover {
     color: #68d9a4;
     background-color: white;
@@ -71,7 +74,7 @@ input {
 }
 
 .dropdown-menu--ustensils {
-  transform: translate3d(85%, 359px, 30px) !important;
+  transform: translate3d(73%, 351px, 30px) !important;
   li:hover {
     color: #ed6454;
     background-color: white;
@@ -101,9 +104,12 @@ input {
   right: 3rem;
 }
 
-.input-search,
-.categories-container {
+.input-search {
   margin-left: 3.8rem !important;
+}
+
+.categories-container {
+  margin-left: 3.4rem !important;
 }
 
 .recipe-card {
