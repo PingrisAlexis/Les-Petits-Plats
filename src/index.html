@@ -34,33 +34,32 @@
     </div>
     <h1 class="text-center">Les petits plats</h1>
       <form class="d-flex w-100 search">
-        <input id="main-search-filter" class="input-search form-control bg-light px-3" type="search" aria-label="Search" placeholder="Rechercher un ingrédient, appareil, ustensil ou une recette">
-        <button class="btn-search--icone btn fs-3 mr-8" type="button">
+        <input id="main-search-filter" class="input-search form-control bg-light px-5" type="search" aria-label="Search" placeholder="Rechercher un ingrédient, appareil, ustensil ou une recette">
+        <div class="btn-search--icone btn fs-3 mr-8" type="button">
           <i class="fa fa-search"></i>
-        </button>
+        </div>
       </form>
   </header>
   <main class="mt-5">
-
-  <ul class="badges d-flex mt-3 gap-3 flex-row">
+    <div id="no-result-message"></div>
+  <ul class="badges container flex-start">
     <!-- GENERATE BADGES -->
-    <li class="d-flex align-items-center justify-content-center bg-light">
-      <p> azeazeaze</p>
+    <li class="d-inline-flex align-items-center bg-light">
+      <span> azeazeaze</span>
       <i class="far fa-times-circle"></i>
     </li>
-
   </ul>
+
 <!--SELECT CONTAINER-->
   <div class="categories-container d-flex">
-
     <!--SELECT INGREDIENTS-->
-    <div class="btn-category btn-category--ingredients me-3">
+    <div class="btn-category btn-category--ingredients m-2">
       <div role="search"
            aria-expanded="false"
            data-bs-toggle="dropdown"
            class="btn w-100 fs-5 p-0 d-flex justify-content-around align-items-center">
-        <p>Ingrédients</p>
-        <i class="mb-2 fas fa-chevron-down"></i>
+        <span>Ingrédients</span>
+        <i class="fas fa-chevron-down m-2"></i>
       </div>
 
       <div class="dropdown-menu dropdown-menu--ingredients">
@@ -79,19 +78,19 @@
     </div>
 
     <!--SELECT APPAREIL-->
-    <div class="btn-category btn-category--appliances me-3">
+    <div class="btn-category btn-category--appliances m-2">
       <div role="search"
            aria-expanded="false"
            data-bs-toggle="dropdown"
            class="btn w-100 fs-5 p-0 d-flex justify-content-around align-items-center">
-        <p>Ingrédients</p>
-        <i class="mb-2 fas fa-chevron-down"></i>
+        <span>Appareils</span>
+        <i class="fas fa-chevron-down m-2"></i>
       </div>
 
       <div class="dropdown-menu dropdown-menu--appliances">
         <div class="d-flex justify-content-between p-2 fs-5">
           <input type="text"
-                 placeholder="Rechercher un ingrédient"
+                 placeholder="Rechercher un appareil"
                  name="appliance"
                  class="pe-5 filter-input--appliances"/>
           <i class="mt-2 fas fa-chevron-up"></i>
@@ -102,14 +101,15 @@
         </ul>
       </div>
     </div>
+
     <!--SELECT USTENSILES-->
-    <div class="btn-category btn-category--ustensils me-3">
+    <div class="btn-category btn-category--ustensils m-2">
       <div role="search"
            aria-expanded="false"
            data-bs-toggle="dropdown"
            class="btn w-100 fs-5 p-0 d-flex justify-content-around align-items-center">
-        <p>Ustensiles</p>
-        <i class="mb-2 fas fa-chevron-down"></i>
+        <span>Ustensiles</span>
+        <i class="fas fa-chevron-down m-2"></i>
       </div>
 
       <div class="dropdown-menu dropdown-menu--ustensils">
