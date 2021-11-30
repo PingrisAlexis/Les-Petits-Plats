@@ -10,9 +10,10 @@ const getAllRecipes = () => {
 const getAllIngredients = () => {
     let ingredientsList = document.getElementById("ingredients-list");
     let allIngredients = [];
-    for (const element of recipes) {
-        element.ingredients.map(elt => allIngredients.includes(elt.ingredient) ? false : allIngredients.push(elt.ingredient))
-    }
+
+    recipes.forEach(elt => {
+        elt.ingredients.map(elt => allIngredients.includes(elt.ingredient) ? false : allIngredients.push(elt.ingredient));
+    })
     ingredientsList.innerHTML = allIngredients.map(elt =>
         new Markup(elt).getItemsList()).join('');
 }
@@ -20,9 +21,10 @@ const getAllIngredients = () => {
 const getAllAppliances = () => {
     let appliancesList = document.getElementById("appliances-list");
     let allAppliances = [];
-    for (const element of recipes) {
-        allAppliances.includes(element.appliance) ? false : allAppliances.push(element.appliance)
-    }
+
+    recipes.forEach(elt => {
+        allAppliances.includes(elt.appliance) ? false : allAppliances.push(elt.appliance);
+    })
     appliancesList.innerHTML = allAppliances.map(elt =>
         new Markup(elt).getItemsList()).join('');
 }
@@ -30,9 +32,10 @@ const getAllAppliances = () => {
 const getAllUstensils = () => {
     let ustensilsList = document.getElementById("ustensils-list");
     let allUstensils = [];
-    for (const element of recipes) {
-        element.ustensils.map(elt => allUstensils.includes(elt) ? false : allUstensils.push(elt))
-    }
+
+    recipes.forEach(elt => {
+        elt.ustensils.map(elt => allUstensils.includes(elt) ? false : allUstensils.push(elt));
+    })
     ustensilsList.innerHTML = allUstensils.map(elt =>
         new Markup(elt).getItemsList()).join('');
 }
