@@ -1,46 +1,46 @@
 import {recipes} from "../../assets/data/data";
 import {Markup} from "./markup";
 
-const getAllRecipes = () => {
+export const recipesToDisplay = (selectedRecipes) => {
     const recipesContainer = document.getElementById("recipes-cards-container");
-    recipesContainer.innerHTML += recipes.map(elt =>
+    recipesContainer.innerHTML = selectedRecipes.map(elt =>
         new Markup(elt).getRecipeCard()).join('');
 }
 
-const getAllIngredients = () => {
+export const ingredientsToDisplay = (selectedRecipes) => {
     let ingredientsList = document.getElementById("ingredients-list");
     let allIngredients = [];
 
-    recipes.forEach(elt => {
-        elt.ingredients.map(elt => allIngredients.includes(elt.ingredient) ? false : allIngredients.push(elt.ingredient));
+    selectedRecipes.filter(selectedRecipe => {
+        selectedRecipe.ingredients.forEach(elt => allIngredients.includes(elt.ingredient) ? false : allIngredients.push(elt.ingredient));
     })
-    ingredientsList.innerHTML = allIngredients.map(elt =>
-        new Markup(elt).getItemsList()).join('');
+    ingredientsList.innerHTML = allIngredients.map(ingredient =>
+        new Markup(ingredient).getItemsList()).join('');
 }
 
-const getAllAppliances = () => {
+export const appliancesToDisplay = (selectedRecipes) => {
     let appliancesList = document.getElementById("appliances-list");
     let allAppliances = [];
 
-    recipes.forEach(elt => {
-        allAppliances.includes(elt.appliance) ? false : allAppliances.push(elt.appliance);
+    selectedRecipes.filter(selectedRecipe => {
+        allAppliances.includes(selectedRecipe.appliance) ? false : allAppliances.push(selectedRecipe.appliance);
     })
-    appliancesList.innerHTML = allAppliances.map(elt =>
-        new Markup(elt).getItemsList()).join('');
+    appliancesList.innerHTML = allAppliances.map(appliance =>
+        new Markup(appliance).getItemsList()).join('');
 }
 
-const getAllUstensils = () => {
+export const ustensilsToDisplay = (selectedRecipes) => {
     let ustensilsList = document.getElementById("ustensils-list");
     let allUstensils = [];
 
-    recipes.forEach(elt => {
-        elt.ustensils.map(elt => allUstensils.includes(elt) ? false : allUstensils.push(elt));
+    selectedRecipes.filter(selectedRecipe => {
+        selectedRecipe.ustensils.forEach(ustensil => allUstensils.includes(ustensil) ? false : allUstensils.push(ustensil));
     })
-    ustensilsList.innerHTML = allUstensils.map(elt =>
-        new Markup(elt).getItemsList()).join('');
+    ustensilsList.innerHTML = allUstensils.map(ustensil =>
+        new Markup(ustensil).getItemsList()).join('');
 }
 
-getAllRecipes();
-getAllIngredients();
-getAllAppliances();
-getAllUstensils();
+recipesToDisplay(recipes);
+ingredientsToDisplay(recipes);
+appliancesToDisplay(recipes);
+ustensilsToDisplay(recipes);
