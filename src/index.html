@@ -40,13 +40,14 @@
         </div>
       </form>
   </header>
-  <main class="mt-5">
-    <div id="no-result-message"></div>
-  <ul class="badges container flex-start">
+  <main class="mt-6">
+  <ul class="categories-list container mt-4" id="tag-list">
     <!-- GENERATE BADGES -->
-    <li class="d-inline-flex align-items-center bg-light">
-      <span> azeazeaze</span>
-      <i class="far fa-times-circle"></i>
+    <li class="m-1 d-inline-flex align-items-center categories-tag ingredient-tag " >
+    </li>
+    <li class="m-1 d-inline-flex align-items-center categories-tag appliance-tag" >
+    </li>
+    <li class="m-1 d-inline-flex align-items-center categories-tag ustensil-tag" >
     </li>
   </ul>
 
@@ -67,11 +68,11 @@
           <input type="text"
                  placeholder="Rechercher un ingrédient"
                  name="ingredient"
-                 class="pe-5 filter-input--ingredients"/>
-          <i class="mt-2 fas fa-chevron-up"></i>
+                 class="pe-5 filter-input--ingredients filter-input--categories"/>
+          <i class="m-2 fas fa-chevron-up"></i>
         </div>
-        <ul class="d-flex w-100 flex-wrap justify-content-evenly fs-6"
-            id="ingredients-list">
+        <ul class="d-flex w-100 flex-wrap justify-content-between fs-6 ingredients-tag-container"
+           id="ingredients-list" >
           <!-- GENERATE FILTER -->
         </ul>
       </div>
@@ -92,10 +93,10 @@
           <input type="text"
                  placeholder="Rechercher un appareil"
                  name="appliance"
-                 class="pe-5 filter-input--appliances"/>
-          <i class="mt-2 fas fa-chevron-up"></i>
+                 class="pe-5 filter-input--appliances filter-input--categories"/>
+          <i class="m-2 fas fa-chevron-up"></i>
         </div>
-        <ul class="d-flex w-100 flex-wrap justify-content-between fs-6"
+        <ul class="d-flex w-100 flex-wrap justify-content-between fs-6 appliances-tag-container"
             id="appliances-list">
           <!-- GENERATE FILTER -->
         </ul>
@@ -117,17 +118,19 @@
           <input type="text"
                  placeholder="Rechercher un ustensile"
                  name="ingredient"
-                 class="filter-input pe-5 filter-input--ustensils"/>
-          <i class="mt-2 fas fa-chevron-up"></i>
+                 class="pe-5 filter-input--ustensils filter-input--categories"/>
+          <i class="m-2 fas fa-chevron-up"></i>
         </div>
-        <ul class="d-flex w-100 flex-wrap justify-content- fs-6"
+        <ul class="d-flex w-100 flex-wrap justify-content-between fs-6 ustensiles-tag-container"
             id="ustensils-list">
           <!-- GENERATE FILTER -->
         </ul>
       </div>
     </div>
   </div>
-  <div id="recipes-cards-container" class="d-flex w-100 flex-wrap justify-content-around"></div>
+    <div id="no-result-message"></div>
+
+    <div id="recipes-cards-container" class="d-flex w-100 flex-wrap justify-content-around"></div>
 
   </main>
   <script type="module" src="./index.js"></script>
