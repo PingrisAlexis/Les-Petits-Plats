@@ -1,34 +1,34 @@
+import {ingredientsToDisplay, recipesToDisplay} from "./build";
+import {recipes} from "../../assets/data/data";
 import {Markup} from "./markup";
 
-const mainSearch =  document.getElementById("main-search-filter");
+
+const mainSearchFilter =  document.getElementById("main-search-filter");
 const noResultMessage = document.getElementById("no-result-message");
 
-mainSearch.addEventListener("keyup", function() {
-
-    const mainSearchFilterValue = this.value.toLowerCase();
-    const recipes = document.querySelectorAll(".recipe-card");
-    
-    const selectedFilter = document.getAttribute("data-filter");
-    console.log(selectedFilter)
-    let allHiddenRecipes = [];
-    recipes.forEach((elt) => {
-
-        let filteredRecipes = elt.innerHTML.toLowerCase();
-        let hiddenRecipes = document.querySelectorAll(".hide");
-
-         if (mainSearchFilterValue.length >= 3 && filteredRecipes.indexOf(mainSearchFilterValue) === -1) {
-             elt.classList.add("hide");
-             allHiddenRecipes.push(hiddenRecipes);
-
-             if (allHiddenRecipes.length === 50) {
-                 noResultMessage.innerHTML = new Markup().getNoResultMessage();
-             }
-         }
-         else {
-             elt.classList.remove("hide");
-             noResultMessage.innerHTML = "";
-         }
-    })
-});
 
 
+export const mainSearch = () => {
+    const mainSearchFilterValue = mainSearchFilter.value.toLowerCase();
+
+    if (mainSearchFilterValue.length >= 3 ) {
+        const mainSearchFilteredRecipes = recipes.filter(recipe => {
+            return (
+                    recipe.name.toLowerCase().includes(mainSearchFilterValue.toLowerCase())
+                    || recipe.description.toLowerCase().includes(mainSearchFilterValue.toLowerCase())
+                    || recipe.ingredients.some(elt => elt.ingredient.includes(mainSearchFilterValue))
+            )})
+
+        if (mainSearchFilteredRecipes.length === 0) {
+            noResultMessage.innerHTML = new Markup().getNoResultMessage();
+        }
+        else {
+            noResultMessage.innerHTML = "";
+        }
+
+        recipesToDisplay(mainSearchFilteredRecipes);
+        ingredientsToDisplay(mainSearchFilteredRecipes);
+    }
+};
+
+mainSearchFilter.addEventListener("keyup", mainSearch)
