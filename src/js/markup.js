@@ -16,44 +16,75 @@ export class Markup {
                                     </div>
                                 </div>
                             </div>
-                         <div class="container">
+                        <div class="container">
                             <div class="row">
-                             <ul class="card-ingredients col-sm-5">
-                             ${this.recipe.ingredients.map(elt =>
-                                `<li>
-                                    <strong>${elt.ingredient}</strong>: ${elt.quantity ? elt.quantity : ''}${elt.unit ? elt.unit : ''} 
-                                </li>`).join('')}
-                             </ul>
-                            <div class="card-description col-sm-5 ">
-                                <p>
-                                    ${this.recipe.description}
-                                </p>
+                                <ul class="card-ingredients col-sm-5">
+                                ${this.recipe.ingredients.map(elt =>
+                                    `<li>
+                                        <strong>${elt.ingredient}</strong>: ${elt.quantity ? elt.quantity : ''}${elt.unit ? elt.unit : ''} 
+                                    </li>`).join('')}
+                                </ul>
+                                <div class="card-description col-sm-5 ">
+                                    <p>
+                                        ${this.recipe.description}
+                                    </p>
+                                </div>
                             </div>
-                        </div>
                         </div>
                     </div>
                 </article>
         `
     }
-    getItemsList() {
+    getIngredientsList() {
         return `
-                <li class="category-search-filter-tag">
+                <li class="ingredients-search-filter-tag">
                     <strong>${this.recipe}</strong>
                 </li>
         `
     }
-    getSelectedTag() {
+    getAppliancesList() {
         return `
-                <span class="p-2">${this.recipe}</span>
-                <i class="p-2 far fa-times-circle"></i>
+                <li class="appliances-search-filter-tag">
+                    <strong>${this.recipe}</strong>
+                </li>
+        `
+    }
+    getUstensilsList() {
+        return `
+                <li class="ustensils-search-filter-tag">
+                    <strong>${this.recipe}</strong>
+                </li>
+        `
+    }
+    getSelectedIngredientsTag() {
+        return `
+                <div class="m-1 d-inline-flex align-items-center categories-tag ingredient-tag">
+                    <span class="p-2">${this.recipe}</span>
+                    <i class="p-2 far fa-times-circle"></i>
+                </div>            
+        `
+    }
+    getSelectedAppliancesTag() {
+        return `
+                <div class="m-1 d-inline-flex align-items-center categories-tag appliance-tag">
+                    <span class="p-2">${this.recipe}</span>
+                    <i class="p-2 far fa-times-circle"></i>
+                </div>            
+        `
+    }
+    getSelectedUstensilsTag() {
+        return `
+                <div class="m-1 d-inline-flex align-items-center categories-tag ustensil-tag">
+                    <span class="p-2">${this.recipe}</span>
+                    <i class="p-2 far fa-times-circle"></i>
+                </div>            
         `
     }
     getNoResultMessage() {
         return `
-                <div class=" mx-auto alert alert-danger w-75 align-self-center mt-3" role="alert">
+                <div class="mx-auto alert alert-danger w-75 align-self-center mt-3" role="alert">
                      <span>Aucune recette ne correspond à votre critère… vous pouvez chercher « tarte aux pommes », « poisson », etc.</span>
                 </div>                 
         `
     }
-
 }
