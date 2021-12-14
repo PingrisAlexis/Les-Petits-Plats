@@ -1,5 +1,4 @@
 import { recipes } from '../../assets/data/data';
-import {ingredientsToDisplay, appliancesToDisplay, ustensilsToDisplay} from "./build";
 
 class DataSource {
    constructor (recipes) {
@@ -7,7 +6,7 @@ class DataSource {
    }
    getAllIngredients() {
       const allIngredients = this.recipes.flatMap(recipe =>
-                        recipe.ingredients.map(ingredient => ingredient.ingredient));
+          recipe.ingredients.map(ingredient => ingredient.ingredient));
       return [...new Set(allIngredients)]
    }
    getAllAppliances() {
@@ -26,17 +25,16 @@ class DataFiltered {
    getFilteredIngredients (filteredRecipes) {
       const filteredIngredients = filteredRecipes.flatMap(filteredRecipe =>
           filteredRecipe.ingredients.map(ingredient => ingredient.ingredient));
-      return ingredientsToDisplay([ ...new Set(filteredIngredients)])
+      return [ ...new Set(filteredIngredients)]
    }
    getFilteredAppliances (filteredRecipes) {
       const filteredAppliances = filteredRecipes.map(filteredRecipe => filteredRecipe.appliance);
-      return appliancesToDisplay([ ...new Set(filteredAppliances)])
+      return [ ...new Set(filteredAppliances)]
    }
    getFilteredUstensils (filteredRecipes) {
       const filteredUstensils = filteredRecipes.flatMap(filteredRecipe => filteredRecipe.ustensils);
-      return ustensilsToDisplay([ ...new Set(filteredUstensils)])
+      return [ ...new Set(filteredUstensils)]
    }
 }
-
 
 export const dataFiltered = new DataFiltered()
