@@ -55,11 +55,11 @@ export const recipes = [
         "quantite" : 1
       },
       {
-        "ingredient" : "Citron Vert",
+        "ingredient" : "Citron vert",
         "quantity" : 5
       },
       {
-        "ingredient" : "Lait de Coco",
+        "ingredient" : "Lait de coco",
         "quantity" : 100,
         "unit" : "ml"
       }
@@ -83,7 +83,7 @@ export const recipes = [
         "unit" : "ml"
       },
       {
-        "ingredient": "Coulis de tomate",
+        "ingredient": "Coulis de tomates",
         "quantity" : 25,
         "unit" : "cl"
       },
@@ -162,7 +162,7 @@ export const recipes = [
         "quantity": 2
       },
       {
-        "ingredient": "Crème fraiche",
+        "ingredient": "Crème fraîche",
         "quantity": 2,
         "unit": "cuillères à soupe"
       },
@@ -200,12 +200,12 @@ export const recipes = [
         "quantity": "2"
       },
       {
-        "ingredient":"Crème fraiche",
+        "ingredient":"Crème fraîche",
         "quantity":25,
         "unit": "cl"
       },
       {
-        "ingredient": "Sucre en Poudre",
+        "ingredient": "Sucre en poudre",
         "quantity": 100,
         "unit":"grammes"
       },
@@ -278,12 +278,12 @@ export const recipes = [
         "quantity": 2
       },
       {
-        "ingredient": "Sucre en Poudre",
+        "ingredient": "Sucre en poudre",
         "quantity": "110",
         "unit": "grammes"
       },
       {
-        "ingredient": "farine",
+        "ingredient": "Farine",
         "quantity": 90,
         "unit": "grammes"
       }
@@ -385,7 +385,7 @@ export const recipes = [
         "quantity": 1
       },
       {
-        "ingredient": "Salade Verte",
+        "ingredient": "Salade verte",
         "quantity": 1
       },
       {
@@ -685,7 +685,7 @@ export const recipes = [
         "unit": "grammes"
       },
       {
-        "ingredient": "Crème fraiche",
+        "ingredient": "Crème fraîche",
         "quantity": 200,
         "unit": "grammes"
       },
@@ -720,7 +720,7 @@ export const recipes = [
         "quantity": 2
       },
       {
-        "ingredient": "Coulis de tomate",
+        "ingredient": "Coulis de tomates",
         "quantity": 300,
         "unit":"grammes"
       },
@@ -735,7 +735,7 @@ export const recipes = [
         "unit": "cl"
       },
       {
-        "ingredient": "Crème Fraiche",
+        "ingredient": "Crème fraîche",
         "quantity" : 1,
         "unit": "cuillères à soupe"
       }
@@ -805,7 +805,7 @@ export const recipes = [
         "quantity": 3
       },
       {
-        "ingredient": "Crème Fraîche",
+        "ingredient": "Crème fraîche",
         "quantity": 20,
         "unit": "cl"
       },
@@ -1377,7 +1377,7 @@ export const recipes = [
         "unit": "Litres"
       },
       {
-        "ingredient": "Citron Vert",
+        "ingredient": "Citron vert",
         "quantity": 3
       },
       {
@@ -1509,7 +1509,7 @@ export const recipes = [
         "unit":"grammes"
       },
       {
-        "ingredient": "farine",
+        "ingredient": "Farine",
         "quantity": 40,
         "unit": "grammes"
       }
@@ -1547,7 +1547,7 @@ export const recipes = [
     "time": 30,
     "description":"Faire bouillir le lait ( on peut y ajouter de l'essence de vanille. Battre les oeufs et le sucre, ajouter la farine puis finalement ajouter le lait chaud. Remettre à feu doux pour faire épaissir en remuant pendant 5 à 10 minutes.",
     "appliance": "Casserole",
-    "ustensils": ["Fouet","saladier"]
+    "ustensils": ["Fouet","Saladier"]
   },
   {
     "id": 46,
@@ -1703,7 +1703,7 @@ export const recipes = [
         "quantity": 6
       },
       {
-        "ingredient": "Poudre d'amendes",
+        "ingredient": "Poudre d'amandes",
         "quantity": 500,
         "unit": "grammes"
       },
@@ -1719,7 +1719,7 @@ export const recipes = [
       }
     ],
     "time": 60,
-    "description":"Préparer la frangipane : Mélanger le sucre la poudre d'amander, le beurre et les oeufs. Etaler la moitier de la pate feuilleté et mettre dans un moule à tarte. Garnir de frangipane et recouvrir du reste de pate feuilletée. Mettre au four 30 minutes",
+    "description":"Préparer la frangipane : Mélanger le sucre la poudre d'amandes, le beurre et les oeufs. Etaler la moitier de la pate feuilleté et mettre dans un moule à tarte. Garnir de frangipane et recouvrir du reste de pate feuilletée. Mettre au four 30 minutes",
     "appliance": "Four",
     "ustensils":["Rouleau à patisserie","Fouet"]
   }
