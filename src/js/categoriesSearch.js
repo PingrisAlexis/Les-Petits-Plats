@@ -1,92 +1,38 @@
-import {appliancesToDisplay, ustensilsToDisplay, ingredientsToDisplay, modifyIngredientList} from "./build";
-import {recipes} from "../../assets/data/data";
-import {Markup} from "./markup";
+import {appliancesToDisplay, ustensilsToDisplay, ingredientsToDisplay} from "./build";
+import {dataSource} from './dataLogic';
 
-
-// const categorySearchFilters =  document.querySelectorAll(".filter-input--categories")
-const ustensilsSearchFilters =  document.querySelector(".filter-input--ustensils");
-const appliancesSearchFilters =  document.querySelector(".filter-input--appliances");
+//INGREDIENTS SEARCH FILTERS
 const ingredientsSearchFilters =  document.querySelector(".filter-input--ingredients");
-
-const categoryTags = document.querySelectorAll(".category-search-filter-tag")
-
-let selectedIngredientsTags;
-let selectedAppliancesTags;
-let selectedUstencilsTags;
-
-const categorySearch = () => {
-
-    const appliancesSearchFilterValue = appliancesSearchFilters.value.toLowerCase();
-    const applianceSearchFilteredRecipes = recipes.filter(recipe => {
+export const ingredientsSearch = (e) => {
+    const value = e.target.value.toLowerCase();
+    const filteredIngredientsBySearch = dataSource.getAllIngredients().filter(ingredient => {
         return (
-            recipe.appliance.toLowerCase().includes(appliancesSearchFilterValue)
+            ingredient.toLowerCase().includes(value)
         )})
-
-    const ingredientsSearchFilterValue = ingredientsSearchFilters.value.toLowerCase();
-    const ingredientSearchFilteredRecipes = recipes.filter(recipe => {
-        return (
-            recipe.ingredients.some(elt => elt.ingredient.includes(ingredientsSearchFilterValue))
-        )
-    })
-
-    const ustensilsSearchFilterValue = ustensilsSearchFilters.value.toLowerCase();
-    const ustensilSearchFilteredRecipes = recipes.filter(recipe => {
-        return (
-            recipe.ustensils.some(ustensil => ustensil.toLowerCase().includes(ustensilsSearchFilterValue))
-        )})
-
-        ingredientsToDisplay(ingredientSearchFilteredRecipes)
-        appliancesToDisplay(applianceSearchFilteredRecipes);
-        ustensilsToDisplay(ustensilSearchFilteredRecipes);
+    ingredientsToDisplay(filteredIngredientsBySearch);
 };
+ingredientsSearchFilters.addEventListener("input", ingredientsSearch)
 
-ingredientsSearchFilters.addEventListener("keyup", categorySearch)
-ustensilsSearchFilters.addEventListener("keyup", categorySearch)
-appliancesSearchFilters.addEventListener("keyup", categorySearch)
+//APPLIANCES SEARCH FILTERS
+const appliancesSearchFilters =  document.querySelector(".filter-input--appliances");
+const appliancesSearch = (e) => {
+    const value = e.target.value.toLowerCase();
+    const filteredAppliancesBySearch = dataSource.getAllAppliances().filter(appliance => {
+        return (
+            appliance.toLowerCase().includes(value)
+        )})
+    appliancesToDisplay(filteredAppliancesBySearch);
+};
+appliancesSearchFilters.addEventListener("input", appliancesSearch)
 
-
-function filtersTag (categoryTag)  {
-    selectedIngredientsTags = [];
-    selectedAppliancesTags = [];
-    selectedUstencilsTags = [];
-    
-    const ingredientList = document.querySelector(".ingredient-tag");
-    const applianceList = document.querySelector(".appliance-tag");
-    const ustensilList = document.querySelector(".ustensil-tag");
-
-    if (categoryTag.parentNode.className === "d-flex w-100 flex-wrap justify-content-between fs-6 ingredients-tag-container") {
-
-        selectedIngredientsTags.includes(categoryTag.textContent) ? false : selectedIngredientsTags.push(categoryTag.textContent);
-            ingredientList.innerHTML = new Markup(selectedIngredientsTags).getSelectedTag();
-    }
-
-    else if (categoryTag.parentNode.className === "d-flex w-100 flex-wrap justify-content-between fs-6 appliances-tag-container") {
-        selectedAppliancesTags.includes(categoryTag.textContent) ? false : selectedAppliancesTags.push(categoryTag.textContent);
-            applianceList.innerHTML = new Markup(selectedAppliancesTags).getSelectedTag();
-    }
-
-    else if (categoryTag.parentNode.className === "d-flex w-100 flex-wrap justify-content-between fs-6 ustensiles-tag-container") {
-        selectedUstencilsTags.includes(categoryTag.textContent) ? false : selectedUstencilsTags.push(categoryTag.textContent);
-            ustensilList.innerHTML = new Markup(selectedUstencilsTags).getSelectedTag();
-    }
-
-    let deleteSelectedTags = document.querySelectorAll(".fa-times-circle")
-
-    deleteSelectedTags.forEach((deleteSelectedTag) => {
-        deleteSelectedTag.addEventListener("click",() => {
-            resetFiltersTag(deleteSelectedTag);
-        })
-    })
-    function resetFiltersTag(deleteSelectedTag) {
-        deleteSelectedTag.previousElementSibling.remove();
-        deleteSelectedTag.remove();
-        selectedIngredientsTags.splice(deleteSelectedTag, 1)
-    }
-}
-
-categoryTags.forEach((categoryTag) => {
-    categoryTag.addEventListener("click",() => {
-        filtersTag(categoryTag);
-    });
-});
-
+//USTENSILS SEARCH FILTERS
+const ustensilsSearchFilters =  document.querySelector(".filter-input--ustensils");
+const ustensilsSearch = (e) => {
+    const value = e.target.value.toLowerCase();
+    const filteredAppliancesBySearch = dataSource.getAllUstensils().filter(ustensil => {
+        return (
+            ustensil.toLowerCase().includes(value)
+        )})
+    ustensilsToDisplay(filteredAppliancesBySearch);
+};
+ustensilsSearchFilters.addEventListener("input", ustensilsSearch)
