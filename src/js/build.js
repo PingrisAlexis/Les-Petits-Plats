@@ -1,46 +1,32 @@
 import {recipes} from "../../assets/data/data";
 import {Markup} from "./markup";
+import {dataSource} from './dataLogic';
 
-export const recipesToDisplay = (selectedRecipes) => {
+export const recipesToDisplay = (recipes) => {
     const recipesContainer = document.getElementById("recipes-cards-container");
-    recipesContainer.innerHTML = selectedRecipes.map(elt =>
-        new Markup(elt).getRecipeCard()).join('');
+    recipesContainer.innerHTML = recipes.map(recipe =>
+        new Markup(recipe).getRecipeCard()).join('');
 }
 
-export const ingredientsToDisplay = (selectedRecipes) => {
-    let ingredientsList = document.getElementById("ingredients-list");
-    let allIngredients = [];
-
-    selectedRecipes.filter(selectedRecipe => {
-        selectedRecipe.ingredients.forEach(elt => allIngredients.includes(elt.ingredient) ? false : allIngredients.push(elt.ingredient));
-    })
-    ingredientsList.innerHTML = allIngredients.map(ingredient =>
-        new Markup(ingredient).getItemsList()).join('');
+export const ingredientsToDisplay = (ingredients) => {
+    const ingredientsList = document.querySelector("#ingredients-list");
+    ingredientsList.innerHTML = ingredients.map(ingredient =>
+        new Markup(ingredient).getIngredientsList()).join('');
 }
 
-export const appliancesToDisplay = (selectedRecipes) => {
-    let appliancesList = document.getElementById("appliances-list");
-    let allAppliances = [];
-
-    selectedRecipes.filter(selectedRecipe => {
-        allAppliances.includes(selectedRecipe.appliance) ? false : allAppliances.push(selectedRecipe.appliance);
-    })
-    appliancesList.innerHTML = allAppliances.map(appliance =>
-        new Markup(appliance).getItemsList()).join('');
+export const appliancesToDisplay = (appliances) => {
+    const appliancesList = document.getElementById("appliances-list");
+    appliancesList.innerHTML = appliances.map(appliance =>
+        new Markup(appliance).getAppliancesList()).join('');
 }
 
-export const ustensilsToDisplay = (selectedRecipes) => {
-    let ustensilsList = document.getElementById("ustensils-list");
-    let allUstensils = [];
-
-    selectedRecipes.filter(selectedRecipe => {
-        selectedRecipe.ustensils.forEach(ustensil => allUstensils.includes(ustensil) ? false : allUstensils.push(ustensil));
-    })
-    ustensilsList.innerHTML = allUstensils.map(ustensil =>
-        new Markup(ustensil).getItemsList()).join('');
+export const ustensilsToDisplay = (usentils) => {
+    const ustensilsList = document.getElementById("ustensils-list");
+    ustensilsList.innerHTML = usentils.map(ustensil =>
+        new Markup(ustensil).getUstensilsList()).join('');
 }
 
 recipesToDisplay(recipes);
-ingredientsToDisplay(recipes);
-appliancesToDisplay(recipes);
-ustensilsToDisplay(recipes);
+ingredientsToDisplay(dataSource.getAllIngredients());
+appliancesToDisplay(dataSource.getAllAppliances());
+ustensilsToDisplay(dataSource.getAllUstensils());
