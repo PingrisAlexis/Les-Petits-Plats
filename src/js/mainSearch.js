@@ -1,22 +1,19 @@
 import {ingredientsToDisplay, recipesToDisplay} from "./build";
 import {recipes} from "../../assets/data/data";
 import {Markup} from "./markup";
-
+import {dataFiltered} from "./dataLogic";
 
 const mainSearchFilter =  document.getElementById("main-search-filter");
 const noResultMessage = document.getElementById("no-result-message");
 
+export const mainSearch = (e) => {
+    const value = e.target.value.toLowerCase();
 
-
-export const mainSearch = () => {
-    const mainSearchFilterValue = mainSearchFilter.value.toLowerCase();
-
-    if (mainSearchFilterValue.length >= 3 ) {
+    if (value.length >= 3 ) {
         const mainSearchFilteredRecipes = recipes.filter(recipe => {
             return (
-                    recipe.name.toLowerCase().includes(mainSearchFilterValue.toLowerCase())
-                    || recipe.description.toLowerCase().includes(mainSearchFilterValue.toLowerCase())
-                    || recipe.ingredients.some(elt => elt.ingredient.includes(mainSearchFilterValue))
+                    recipe.name.toLowerCase().includes(value)
+                    || recipe.description.toLowerCase().includes(value)
             )})
 
         if (mainSearchFilteredRecipes.length === 0) {
@@ -25,10 +22,9 @@ export const mainSearch = () => {
         else {
             noResultMessage.innerHTML = "";
         }
-
         recipesToDisplay(mainSearchFilteredRecipes);
-        ingredientsToDisplay(mainSearchFilteredRecipes);
+        ingredientsToDisplay(dataFiltered.getFilteredIngredients(mainSearchFilteredRecipes));
     }
 };
 
-mainSearchFilter.addEventListener("keyup", mainSearch)
+mainSearchFilter.addEventListener("input", mainSearch)
