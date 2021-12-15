@@ -24,10 +24,8 @@ export class Markup {
                                         <strong>${elt.ingredient}</strong>: ${elt.quantity ? elt.quantity : ''}${elt.unit ? elt.unit : ''} 
                                     </li>`).join('')}
                                 </ul>
-                                <div class="card-description col-sm-5 ">
-                                    <p>
-                                        ${this.recipe.description}
-                                    </p>
+                                <div class="card-description col-sm-5">
+                                    <p>${this.recipe.description}</p>                                                                      
                                 </div>
                             </div>
                         </div>
@@ -58,7 +56,7 @@ export class Markup {
     }
     getSelectedIngredientsTag() {
         return `
-                <div class="m-1 d-inline-flex align-items-center categories-tag ingredient-tag">
+                <div class="m-1 d-inline-flex align-items-center categories-tag ingredient-tag" data-tag="ingredients">
                     <span class="p-2">${this.recipe}</span>
                     <i class="p-2 far fa-times-circle"></i>
                 </div>            
@@ -66,7 +64,7 @@ export class Markup {
     }
     getSelectedAppliancesTag() {
         return `
-                <div class="m-1 d-inline-flex align-items-center categories-tag appliance-tag">
+                <div class="m-1 d-inline-flex align-items-center categories-tag appliance-tag" data-tag="appliances">
                     <span class="p-2">${this.recipe}</span>
                     <i class="p-2 far fa-times-circle"></i>
                 </div>            
@@ -74,7 +72,7 @@ export class Markup {
     }
     getSelectedUstensilsTag() {
         return `
-                <div class="m-1 d-inline-flex align-items-center categories-tag ustensil-tag">
+                <div class="m-1 d-inline-flex align-items-center categories-tag ustensil-tag" data-tag="ustentils">
                     <span class="p-2">${this.recipe}</span>
                     <i class="p-2 far fa-times-circle"></i>
                 </div>            
