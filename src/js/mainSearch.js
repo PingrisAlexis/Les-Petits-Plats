@@ -1,16 +1,13 @@
-import {ingredientsToDisplay, recipesToDisplay} from "./build";
 import {recipes} from "../../assets/data/data";
 import {Markup} from "./markup";
-import {dataFiltered} from "./dataLogic";
+import {searchLogic, searchRecipes} from "./searchLogic";
 
 const mainSearchFilter =  document.getElementById("main-search-filter");
 const noResultMessage = document.getElementById("no-result-message");
 
-export const mainSearch = (e) => {
-    const value = e.target.value.toLowerCase();
-
+export const mainSearch = (value) => {
     if (value.length >= 3 ) {
-        const mainSearchFilteredRecipes = recipes.filter(recipe => {
+       const mainSearchFilteredRecipes = recipes.filter(recipe => {
             return (
                     recipe.name.toLowerCase().includes(value)
                     || recipe.description.toLowerCase().includes(value)
@@ -22,9 +19,11 @@ export const mainSearch = (e) => {
         else {
             noResultMessage.innerHTML = "";
         }
-        recipesToDisplay(mainSearchFilteredRecipes);
-        ingredientsToDisplay(dataFiltered.getFilteredIngredients(mainSearchFilteredRecipes));
+        return(mainSearchFilteredRecipes)
     }
 };
 
-mainSearchFilter.addEventListener("input", mainSearch)
+mainSearchFilter.addEventListener("input", (e) => {
+    searchLogic.main = e.target.value.toLowerCase();
+    searchRecipes();
+})
