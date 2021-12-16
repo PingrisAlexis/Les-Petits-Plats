@@ -8,10 +8,8 @@ export const generateIngredientsTags = () => {
 
     const selectedIngredientsTags = (seletedIngredientTag) => {
        searchLogic.ingredients = [seletedIngredientTag.textContent.trim().toLowerCase()];
-        selectedIngredientsContainer.innerHTML += searchLogic.ingredients.map(ingredient =>
+        selectedIngredientsContainer.innerHTML = searchLogic.ingredients.map(ingredient =>
             new Markup(ingredient).getSelectedIngredientsTag()).join("");
-
-        console.log(searchLogic.ingredients)
         searchRecipes();
         deleteTag();
     }
@@ -68,10 +66,19 @@ const deleteTag = () => {
             const tagElement = deleteSelectedTag.parentElement;
             const tag = tagElement.textContent.trim();
             const tagType = tagElement.getAttribute("data-tag");
+
             tagElement.remove();
+            if (searchLogic[tagType] !== undefined) {
             searchLogic[tagType] = searchLogic[tagType].filter(t => t !== tag);
+            console.log("dans if")
             searchRecipes();
+            } else {
+                searchLogic[tagType] = searchLogic[tagType].filter(t => t !== tag);
+                searchRecipes();
+            }
+
         })
+
     })
 }
 

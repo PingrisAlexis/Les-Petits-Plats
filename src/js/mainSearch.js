@@ -3,10 +3,9 @@ import {Markup} from "./markup";
 import {searchLogic, searchRecipes} from "./searchLogic";
 
 const mainSearchFilter =  document.getElementById("main-search-filter");
-const noResultMessage = document.getElementById("no-result-message");
+const noResultMessage = document.querySelector("#no-result-message");
 
 export const mainSearch = (value) => {
-    if (value.length >= 3 ) {
        const mainSearchFilteredRecipes = recipes.filter(recipe => {
             return (
                     recipe.name.toLowerCase().includes(value)
@@ -20,7 +19,6 @@ export const mainSearch = (value) => {
             noResultMessage.innerHTML = "";
         }
         return(mainSearchFilteredRecipes)
-    }
 };
 
 mainSearchFilter.addEventListener("input", (e) => {
