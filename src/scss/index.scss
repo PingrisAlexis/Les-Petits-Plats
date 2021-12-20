@@ -58,9 +58,8 @@ input {
   }
 }
 
-
 .dropdown-menu--ingredients {
-  transform: translate3d(10.7%, 351px, 30px) !important;
+  transform: translate3d(0, 16.2rem, 3rem) !important;
   li:hover {
     color: #3282f7;
     background-color: white;
@@ -68,7 +67,7 @@ input {
 }
 
 .dropdown-menu--appliances {
-  transform: translate3d(43.6%, 351px, 30px) !important;
+  transform: translate3d(0rem, 16.2rem, 30px) !important;
   li:hover {
     color: #68d9a4;
     background-color: white;
@@ -76,12 +75,13 @@ input {
 }
 
 .dropdown-menu--ustensils {
-  transform: translate3d(73%, 351px, 30px) !important;
+  transform: translate3d(0rem, 16.2rem, 30px) !important;
   li:hover {
     color: #ed6454;
     background-color: white;
   }
 }
+
 .ingredient-tag,
 .dropdown-menu--ingredients,
 .btn-category--ingredients,
@@ -116,17 +116,23 @@ input {
  {
   margin-left: 3.2rem !important;
 }
+
 .categories-list {
-  margin-left: 3rem !important;
+  margin-left: 3.5rem !important;
   i::before {
     cursor: pointer;
   }
 }
+
 .categories-tag {
+  display: block;
   color: white;
   font-weight: bold;
   border-radius: 0.25rem;
+  margin-left: 2rem;
+  margin-top: 0.5rem;
 }
+
 .recipe-card {
   margin: 2rem;
   height: 30rem;
@@ -151,4 +157,18 @@ input {
 
 .hide {
   display: none;
+}
+
+@media screen and (min-width:900px) {
+  .dropdown-menu--ingredients {
+    transform: translate3d(3.6rem, 16.7rem, 3rem) !important;
+  }
+
+  .dropdown-menu--appliances {
+    transform: translate3d(15rem, 16.7rem, 30px) !important;
+  }
+
+  .dropdown-menu--ustensils {
+    transform: translate3d(25.4rem, 16.7rem, 30px) !important;
+  }
 }
