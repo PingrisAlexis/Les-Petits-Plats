@@ -35,7 +35,6 @@ class DataFiltered {
       const filteredUstensils = filteredRecipes.flatMap(filteredRecipe => filteredRecipe.ustensils);
       return [ ...new Set(filteredUstensils)]
    }
-
 }
 
 export const dataFiltered = new DataFiltered()
