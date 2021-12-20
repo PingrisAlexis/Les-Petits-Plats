@@ -66,19 +66,10 @@ const deleteTag = () => {
             const tagElement = deleteSelectedTag.parentElement;
             const tag = tagElement.textContent.trim();
             const tagType = tagElement.getAttribute("data-tag");
-
-            tagElement.remove();
-            if (searchLogic[tagType] !== undefined) {
             searchLogic[tagType] = searchLogic[tagType].filter(t => t !== tag);
-            console.log("dans if")
+            tagElement.remove();
             searchRecipes();
-            } else {
-                searchLogic[tagType] = searchLogic[tagType].filter(t => t !== tag);
-                searchRecipes();
-            }
-
         })
-
     })
 }
 
