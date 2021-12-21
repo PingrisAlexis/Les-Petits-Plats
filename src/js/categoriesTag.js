@@ -7,7 +7,9 @@ export const generateIngredientsTags = () => {
     const selectedIngredientsContainer = document.querySelector(".selected-ingredients-contenair");
 
     const selectedIngredientsTags = (seletedIngredientTag) => {
-       searchLogic.ingredients = [seletedIngredientTag.textContent.trim().toLowerCase()];
+        if (!searchLogic.ingredients.includes(seletedIngredientTag.textContent.trim().toLowerCase())) {
+            searchLogic.ingredients.push(seletedIngredientTag.textContent.trim().toLowerCase())
+        }
         selectedIngredientsContainer.innerHTML = searchLogic.ingredients.map(ingredient =>
             new Markup(ingredient).getSelectedIngredientsTag()).join("");
         searchRecipes();
@@ -45,7 +47,9 @@ export const generateUstensilsTags = () => {
     const selectedUstensilsContainer = document.querySelector(".selected-ustensils-contenair");
 
     const selectedUstensilsTags = (seletedUstensilTag) => {
-        searchLogic.ustensils = [seletedUstensilTag.textContent.trim().toLowerCase()];
+        if (!searchLogic.ustensils.includes(seletedUstensilTag.textContent.trim().toLowerCase())) {
+            searchLogic.ustensils.push(seletedUstensilTag.textContent.trim().toLowerCase())
+        }
         selectedUstensilsContainer.innerHTML = searchLogic.ustensils.map(ustensil =>
             new Markup(ustensil).getSelectedUstensilsTag()).join("");
         searchRecipes();
@@ -68,15 +72,8 @@ const deleteTag = () => {
             const tagType = tagElement.getAttribute("data-tag");
 
             tagElement.remove();
-            if (searchLogic[tagType] !== undefined) {
             searchLogic[tagType] = searchLogic[tagType].filter(t => t !== tag);
-            console.log("dans if")
             searchRecipes();
-            } else {
-                searchLogic[tagType] = searchLogic[tagType].filter(t => t !== tag);
-                searchRecipes();
-            }
-
         })
 
     })
