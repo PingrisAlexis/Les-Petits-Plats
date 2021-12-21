@@ -24,7 +24,7 @@
   </script>
 
   <title>Les petits plats</title>
-</head>
+<script defer src="bundle.js"></script><link href="css/styles.css" rel="stylesheet"></head>
 <body>
   <header class="d-flex flex-column justify-content-center mt-5">
     <div class="logo d-flex justify-content-center ">
@@ -40,7 +40,7 @@
         </div>
       </form>
   </header>
-  <main>
+  <main class="mt-6">
   <div class="categories-list d-flex mt-1" id="tag-list">
     <!-- GENERATE BADGES -->
     <div class="selected-ingredients-contenair"></div>
@@ -60,7 +60,7 @@
         <i class="fas fa-chevron-down m-2"></i>
       </div>
 
-      <div class="dropdown-menu dropdown-menu--ingredients" id="myDiv">
+      <div class="dropdown-menu dropdown-menu--ingredients">
         <div class="d-flex justify-content-between p-2 fs-5">
           <input type="text"
                  placeholder="Rechercher un ingrédient"
@@ -76,7 +76,7 @@
     </div>
 
     <!--SELECT APPAREIL-->
-    <div class="btn-category btn-category--appliances m-2 ">
+    <div class="btn-category btn-category--appliances m-2">
       <div role="search"
            aria-expanded="false"
            data-bs-toggle="dropdown"
@@ -130,6 +130,7 @@
     <div id="recipes-cards-container" class="d-flex w-100 flex-wrap justify-content-around"></div>
 
   </main>
+  <script type="module" src="./index.js"></script>
 </body>
 
 </html>
