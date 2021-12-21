@@ -50,7 +50,7 @@ ul {
   }
 }
   ::placeholder {
-    color: grey !important;
+    color: rgba(#ffffff, 0.75) !important;
 }
 input {
   border: hidden;
@@ -170,5 +170,8 @@ input {
 
   .dropdown-menu--ustensils {
     transform: translate3d(25.4rem, 16.7rem, 30px) !important;
+  }
+  .btn-category > .btn.show {
+    width: 520px !important;
   }
 }
