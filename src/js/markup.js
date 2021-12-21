@@ -33,54 +33,54 @@ export class Markup {
                 </article>
         `
     }
-    getIngredientsList() {
+    getIngredientsList () {
         return `
                 <li class="ingredients-search-filter-tag">
                     <strong>${this.recipe}</strong>
                 </li>
         `
     }
-    getAppliancesList() {
+    getAppliancesList () {
         return `
                 <li class="appliances-search-filter-tag">
                     <strong>${this.recipe}</strong>
                 </li>
         `
     }
-    getUstensilsList() {
+    getUstensilsList () {
         return `
                 <li class="ustensils-search-filter-tag">
                     <strong>${this.recipe}</strong>
                 </li>
         `
     }
-    getSelectedIngredientsTag() {
+    getSelectedIngredientsTag () {
         return `
-                <div class="m-1 d-inline-flex align-items-center categories-tag ingredient-tag" data-tag="ingredients">
+                <div class="mx-1 d-inline-flex align-items-center categories-tag ingredient-tag" data-tag="ingredients">
                     <span class="p-2">${this.recipe}</span>
                     <i class="p-2 far fa-times-circle"></i>
                 </div>            
         `
     }
-    getSelectedAppliancesTag() {
+    getSelectedAppliancesTag () {
         return `
-                <div class="m-1 d-inline-flex align-items-center categories-tag appliance-tag" data-tag="appliances">
+                <div class="mx-1 d-inline-flex align-items-center categories-tag appliance-tag" data-tag="appliances">
                     <span class="p-2">${this.recipe}</span>
                     <i class="p-2 far fa-times-circle"></i>
                 </div>            
         `
     }
-    getSelectedUstensilsTag() {
+    getSelectedUstensilsTag () {
         return `
-                <div class="m-1 d-inline-flex align-items-center categories-tag ustensil-tag" data-tag="ustentils">
+                <div class="mx-1 d-inline-flex align-items-center categories-tag ustensil-tag" data-tag="ustensils">
                     <span class="p-2">${this.recipe}</span>
                     <i class="p-2 far fa-times-circle"></i>
                 </div>            
         `
     }
-    getNoResultMessage() {
+    getNoResultMessage () {
         return `
-                <div class="mx-auto alert alert-danger w-75 align-self-center mt-3" role="alert">
+                <div class="mx-auto alert alert-danger w-50 align-self-center mt-3" role="alert">
                      <span>Aucune recette ne correspond à votre critère… vous pouvez chercher « tarte aux pommes », « poisson », etc.</span>
                 </div>                 
         `
