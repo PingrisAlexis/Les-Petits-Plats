@@ -14,7 +14,7 @@ export const recipesToDisplay = (recipes) => {
 }
 
 export const ingredientsToDisplay = (ingredients) => {
-    const ingredientsList = document.querySelector("#ingredients-list");
+    const ingredientsList = document.getElementById("ingredients-list");
     ingredientsList.innerHTML = ingredients.map(ingredient =>
         new Markup(ingredient).getIngredientsList()).join('');
     generateIngredientsTags();
