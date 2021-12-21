@@ -4,7 +4,9 @@ import {recipes} from "../../assets/data/data";
 import {dataFiltered} from "./dataLogic";
 import {Markup} from "./markup";
 const noResultMessage = document.querySelector("#no-result-message");
-
+// const ingredientList = document.querySelector(".dropdown-menu--ingredients")
+// const ustensilList = document.querySelector(".dropdown-menu--ustensils")
+// const applianceList = document.querySelector(".dropdown-menu--appliances")
 export const searchLogic = {
     main: '',
     ingredients: [],
@@ -13,7 +15,6 @@ export const searchLogic = {
 }
 
 export const searchRecipes = () => {
-    console.log(searchLogic)
     let filteredRecipes = recipes;
     if (searchLogic.main.length >= 3 || searchLogic.ingredients.length > 0 ||  searchLogic.appliances.length > 0 || searchLogic.ustensils.length > 0 || filteredRecipes.length === 0) {
 
@@ -35,6 +36,9 @@ export const searchRecipes = () => {
             ustensilsToDisplay(dataFiltered.getFilteredUstensils(filteredRecipes));
             recipesToDisplay(filteredRecipes);
                 noResultMessage.innerHTML = "";
+                // ingredientList.classList.add("tag-on-menu")
+                // ustensilList.classList.add("tag-on-menu")
+                // applianceList.classList.add("tag-on-menu")
             })
         }
 
