@@ -13,6 +13,8 @@ ul {
 .categories-container {
   display: flex;
   flex-wrap: wrap;
+  //position: absolute !important;
+  top: 3rem !important;
 }
 
 .btn-category {
@@ -20,6 +22,7 @@ ul {
   padding: 1rem;
   border-radius: 0.25rem;
   cursor: pointer;
+  //max-width: 10rem;
   input {
     border: hidden;
   }
@@ -39,27 +42,26 @@ ul {
 .dropdown-menu {
   max-width: 35rem;
   ul {
-  color: white;
-  li {
-    margin: 0.5rem;
-    width: 9rem;
-    white-space: nowrap;
-    overflow: hidden;
-    cursor: pointer;
-    text-overflow: ellipsis;
+    color: white;
+    li {
+      margin: 0.5rem;
+      width: 9rem;
+      white-space: nowrap;
+      overflow: hidden;
+      cursor: pointer;
+      text-overflow: ellipsis;
+    }
   }
-}
   ::placeholder {
     color: rgba(#ffffff, 0.75) !important;
-}
-input {
-  border: hidden;
-  outline: none;
+  }
+  input {
+    border: hidden;
+    outline: none;
   }
 }
 
 .dropdown-menu--ingredients {
-  transform: translate3d(0, 16.2rem, 3rem) !important;
   li:hover {
     color: #3282f7;
     background-color: white;
@@ -67,7 +69,6 @@ input {
 }
 
 .dropdown-menu--appliances {
-  transform: translate3d(0rem, 16.2rem, 30px) !important;
   li:hover {
     color: #68d9a4;
     background-color: white;
@@ -75,7 +76,6 @@ input {
 }
 
 .dropdown-menu--ustensils {
-  transform: translate3d(0rem, 16.2rem, 30px) !important;
   li:hover {
     color: #ed6454;
     background-color: white;
@@ -113,7 +113,7 @@ input {
 }
 
 .categories-container,
- {
+{
   margin-left: 3.2rem !important;
 }
 
@@ -137,11 +137,13 @@ input {
   margin: 2rem;
   height: 30rem;
   width: 32rem;
+  border-radius: 0.25rem;
 }
 
 .recipe-image {
   height: 15rem;
-  background-color: #c7bebe ;
+  background-color: #c7bebe;
+  border-radius: 0.25rem 0.25rem  0 0;
 }
 
 .recipe-info {
@@ -149,6 +151,7 @@ input {
   background-color: #EFEFEF;
   text-overflow: ellipsis;
   overflow: hidden;
+  border-radius: 0 0 0.25rem 0.25rem;
 }
 
 .card-description {
@@ -159,19 +162,73 @@ input {
   display: none;
 }
 
-@media screen and (min-width:900px) {
+
+//INGREDIENTS DROPDOWN
+@media screen and (max-width:659px) {
   .dropdown-menu--ingredients {
-    transform: translate3d(3.6rem, 16.7rem, 3rem) !important;
+    transform: translate3d(0, 15.2rem, 30px) !important;
   }
+}
+@media screen and (min-width:660px) {
+  .dropdown-menu--ingredients {
+    transform: translate3d(3.6rem, 16.7rem, 30px) !important;
+  }
+}
 
+//APPLIANCE DROPDOWN
+@media screen and (max-width:399px) {
   .dropdown-menu--appliances {
-    transform: translate3d(15rem, 16.7rem, 30px) !important;
+    transform: translate3d(0, 20.6rem, 30px) !important;
   }
+}
+@media screen and (min-width:400px) {
+  .dropdown-menu--appliances {
+    transform: translate3d(0, 15.2rem, 30px) !important;
+  }
+}
+@media screen and (min-width:800px) {
+  .dropdown-menu--appliances {
+    transform: translate3d(15.1rem, 16.7rem, 30px) !important;
+  }
+}
 
+//USTENSILS DROPDOWN
+@media screen and (max-width:388px) {
+  .dropdown-menu--ustensils {
+    transform: translate3d(0, 26rem, 30px) !important;
+  }
+}
+@media (min-width: 389px) and (max-width:571px) {
+  .dropdown-menu--ustensils {
+    transform: translate3d(0, 20.6rem, 30px) !important;
+  }
+}
+@media (min-width: 572px) and (max-width:970px) {
+  .dropdown-menu--ustensils {
+    transform: translate3d(0, 16.3rem, 30px) !important;
+  }
+}
+@media screen and (min-width:971px) {
   .dropdown-menu--ustensils {
     transform: translate3d(25.4rem, 16.7rem, 30px) !important;
   }
+}
+
+//DROPDOWN + BUTTON CATEGORIES
+@media screen and (max-width:970px) {
+  .dropdown-menu {
+    width: 100% !important;
+  }
   .btn-category > .btn.show {
-    width: 520px !important;
+    width: 100%  !important;
+  }
+}
+
+@media screen and (min-width:971px) {
+  .dropdown-menu {
+    width: 525px !important;
+  }
+  .btn-category > .btn.show {
+    width: 490px !important;
   }
 }
