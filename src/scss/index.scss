@@ -22,7 +22,7 @@ ul {
   padding: 1rem;
   border-radius: 0.25rem;
   cursor: pointer;
-  
+   //max-width: 10rem;
   input {
     border: hidden;
   }
@@ -162,20 +162,73 @@ ul {
   display: none;
 }
 
-@media screen and (min-width:900px) {
+
+//INGREDIENTS DROPDOWN
+@media screen and (max-width:659px) {
   .dropdown-menu--ingredients {
-
-    transform: translate3d(3.6rem, 16.7rem, 3rem) !important;
+    transform: translate3d(0, 15.2rem, 30px) !important;
   }
+}
+@media screen and (min-width:660px) {
+  .dropdown-menu--ingredients {
+    transform: translate3d(3.6rem, 16.7rem, 30px) !important;
+  }
+}
 
+//APPLIANCE DROPDOWN
+@media screen and (max-width:399px) {
   .dropdown-menu--appliances {
-    transform: translate3d(14.6rem, 16.7rem, 30px) !important;
+    transform: translate3d(0, 20.6rem, 30px) !important;
   }
+}
+@media screen and (min-width:400px) {
+  .dropdown-menu--appliances {
+    transform: translate3d(0, 15.2rem, 30px) !important;
+  }
+}
+@media screen and (min-width:800px) {
+  .dropdown-menu--appliances {
+    transform: translate3d(15.1rem, 16.7rem, 30px) !important;
+  }
+}
 
+//USTENSILS DROPDOWN
+@media screen and (max-width:388px) {
   .dropdown-menu--ustensils {
-    transform: translate3d(25.5rem, 16.7rem, 30px) !important;
+    transform: translate3d(0, 26rem, 30px) !important;
+  }
+}
+@media (min-width: 389px) and (max-width:571px) {
+  .dropdown-menu--ustensils {
+    transform: translate3d(0, 20.6rem, 30px) !important;
+  }
+}
+@media (min-width: 572px) and (max-width:970px) {
+  .dropdown-menu--ustensils {
+    transform: translate3d(0, 16.3rem, 30px) !important;
+  }
+}
+@media screen and (min-width:971px) {
+  .dropdown-menu--ustensils {
+    transform: translate3d(25.4rem, 16.7rem, 30px) !important;
+  }
+}
+
+//DROPDOWN + BUTTON CATEGORIES
+@media screen and (max-width:970px) {
+  .dropdown-menu {
+    width: 100% !important;
   }
   .btn-category > .btn.show {
+    width: 100%  !important;
+  }
+}
+
+@media screen and (min-width:971px) {
+  .dropdown-menu {
     width: 525px !important;
+  }
+  .btn-category > .btn.show {
+    width: 490px !important;
   }
 }

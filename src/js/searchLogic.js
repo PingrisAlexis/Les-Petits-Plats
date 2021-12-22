@@ -4,9 +4,18 @@ import {recipes} from "../../assets/data/data";
 import {dataFiltered} from "./dataLogic";
 import {Markup} from "./markup";
 const noResultMessage = document.querySelector("#no-result-message");
-// const ingredientList = document.querySelector(".dropdown-menu--ingredients")
-// const ustensilList = document.querySelector(".dropdown-menu--ustensils")
-// const applianceList = document.querySelector(".dropdown-menu--appliances")
+const ingredientList = document.querySelector(".dropdown-menu--ingredients");
+const ustensilList = document.querySelector(".dropdown-menu--ustensils");
+const applianceList = document.querySelector(".dropdown-menu--appliances");
+
+function itemsToDisplay(filteredRecipes) {
+    ingredientsToDisplay(dataFiltered.getFilteredIngredients(filteredRecipes));
+    appliancesToDisplay(dataFiltered.getFilteredAppliances(filteredRecipes));
+    ustensilsToDisplay(dataFiltered.getFilteredUstensils(filteredRecipes));
+    recipesToDisplay(filteredRecipes);
+    noResultMessage.innerHTML = "";
+}
+
 export const searchLogic = {
     main: '',
     ingredients: [],
@@ -16,6 +25,17 @@ export const searchLogic = {
 
 export const searchRecipes = () => {
     let filteredRecipes = recipes;
+
+    if (searchLogic.ingredients.length > 0 || searchLogic.appliances.length > 0 || searchLogic.ustensils.length > 0) {
+        ingredientList.classList.add("mt-5");
+        ustensilList.classList.add("mt-5");
+        applianceList.classList.add("mt-5");
+    } else {
+        ingredientList.classList.remove("mt-5");
+        ustensilList.classList.remove("mt-5");
+        applianceList.classList.remove("mt-5");
+    }
+    
     if (searchLogic.main.length >= 3 || searchLogic.ingredients.length > 0 ||  searchLogic.appliances.length > 0 || searchLogic.ustensils.length > 0 || filteredRecipes.length === 0) {
 
         if (searchLogic.main.length >= 3) {
@@ -31,14 +51,7 @@ export const searchRecipes = () => {
                 return (
                     recipe.ingredients.some(ingredient => ingredient.ingredient.toLowerCase().includes(item.toLowerCase()))
                 )})
-            ingredientsToDisplay(dataFiltered.getFilteredIngredients(filteredRecipes));
-            appliancesToDisplay(dataFiltered.getFilteredAppliances(filteredRecipes));
-            ustensilsToDisplay(dataFiltered.getFilteredUstensils(filteredRecipes));
-            recipesToDisplay(filteredRecipes);
-                noResultMessage.innerHTML = "";
-                // ingredientList.classList.add("tag-on-menu")
-                // ustensilList.classList.add("tag-on-menu")
-                // applianceList.classList.add("tag-on-menu")
+                itemsToDisplay(filteredRecipes)
             })
         }
 
@@ -47,11 +60,7 @@ export const searchRecipes = () => {
                 return (
                     recipe.appliance.toLowerCase().includes(searchLogic.appliances[0].toLowerCase())
                 )})
-            ingredientsToDisplay(dataFiltered.getFilteredIngredients(filteredRecipes));
-            appliancesToDisplay(dataFiltered.getFilteredAppliances(filteredRecipes));
-            ustensilsToDisplay(dataFiltered.getFilteredUstensils(filteredRecipes));
-            recipesToDisplay(filteredRecipes);
-            noResultMessage.innerHTML = "";
+                itemsToDisplay(filteredRecipes)
         }
 
         if (searchLogic.ustensils.length > 0) {
@@ -60,11 +69,7 @@ export const searchRecipes = () => {
                 return (
                     recipe.ustensils.some(ustensil => ustensil.toLowerCase().includes(item.toLowerCase()))
                 )})
-            ingredientsToDisplay(dataFiltered.getFilteredIngredients(filteredRecipes));
-            appliancesToDisplay(dataFiltered.getFilteredAppliances(filteredRecipes));
-            ustensilsToDisplay(dataFiltered.getFilteredUstensils(filteredRecipes));
-            recipesToDisplay(filteredRecipes);
-            noResultMessage.innerHTML = "";
+                itemsToDisplay(filteredRecipes)
             })
         }
 
@@ -73,10 +78,6 @@ export const searchRecipes = () => {
         }
 
     } else {
-        ingredientsToDisplay(dataFiltered.getFilteredIngredients(filteredRecipes));
-        appliancesToDisplay(dataFiltered.getFilteredAppliances(filteredRecipes));
-        ustensilsToDisplay(dataFiltered.getFilteredUstensils(filteredRecipes));
-        recipesToDisplay(filteredRecipes);
-        noResultMessage.innerHTML = "";
+        itemsToDisplay(filteredRecipes)
     }
 }
