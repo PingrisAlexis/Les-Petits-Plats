@@ -8,7 +8,8 @@ export const mainSearch = (value) => {
     let mainSearchFilteredRecipes = []
 
     for (let i=0; i< recipes.length; i++) {
-      if (recipes[i].name.toLowerCase().includes(value) || recipes[i].description.toLowerCase().includes(value)) {
+      if (recipes[i].name.toLowerCase().includes(value) 
+          || recipes[i].description.toLowerCase().includes(value)) {
           mainSearchFilteredRecipes.push(recipes[i])
       }
     }
