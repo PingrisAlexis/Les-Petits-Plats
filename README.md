@@ -10,11 +10,11 @@
 
 ### Elements provided:
 
-- The description of the search use case.
+- [The description of the search use case](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/viewer.html?pdfurl=https%3A%2F%2Fs3-eu-west-1.amazonaws.com%2Fcourse.oc-static.com%2Fprojects%2FFront-End%2BV2%2FP6%2BAlgorithms%2FCas%2Bd%25E2%2580%2599utilisation%2B%252303%2BFiltrer%2Bles%2Brecettes%2Bdans%2Bl%25E2%2580%2599interface%2Butilisateur.pdf&clen=106444&chunk=true)
 
-- Mock-ups: https://www.figma.com/file/xqeE1ZKlHUWi2Efo8r73NK/UI-Design-Les-Petits-Plats-FR
+- [Mock-ups Les petits plats](https://www.figma.com/file/xqeE1ZKlHUWi2Efo8r73NK/UI-Design-Les-Petits-Plats-FR)
 
-- JavaScript file containing a JSON array of 50 recipes.
+- [JSON of recipes](https://github.com/OpenClassrooms-Student-Center/P11-front-end-search-engine/blob/master/recipes.js)
 
 ### Skills assessed:
 
