@@ -22,10 +22,10 @@
 
 - Develop an algorithm to solve a problem.
 
-### Set up:.
+### Set up:
 
 - Clone the project
 
 - Then: `npm run start`
 
-- The server listens on the port: http://localhost:9000
+- The server listens on the port 9000: http://localhost:9000
