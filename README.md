@@ -1,6 +1,6 @@
-# PingrisAlexis_07_17112021
+# Project 3/9 Front End Developer Path
 
-## Project 7 Front-End OpenClassrooms - Develop a search algorithm in JavaScript.
+## Develop a search algorithm in JavaScript.
 
 ### Specifications:
 
