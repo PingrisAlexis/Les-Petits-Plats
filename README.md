@@ -1,4 +1,4 @@
-# Project 3/9 Front End Developer Path
+# Project 3/9 - Front End Developer Path
 
 ## Develop a search algorithm in JavaScript.
 
